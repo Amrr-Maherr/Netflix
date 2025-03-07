@@ -1,3 +1,4 @@
+"use client"
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
@@ -11,18 +12,13 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-export const metadata = {
-  title: "Netflix",
-  description: "Unlimited movies, TV shows, and more.",
-  icons: {
-    icon: "/Assets/netflix-logo-icon.svg",
-  },
-};
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className=" bg-black">{children}</body>
+      <body className=" bg-black">
+        {children}
+      </body>
     </html>
   );
 }
