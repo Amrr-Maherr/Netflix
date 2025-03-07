@@ -90,12 +90,12 @@ export default function Login() {
               <input type="checkbox" className="mr-2" />
               Remember me
             </label>
-            <a
+            <Link
               className="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800"
-              href="#"
+              href="/Needhelp"
             >
               Need help?
-            </a>
+            </Link>
           </div>
 
           {/* Sign In Button */}
