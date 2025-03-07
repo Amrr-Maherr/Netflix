@@ -6,6 +6,7 @@ import Logo from "../../../public/Assets/netflix-3.svg";
 import Image from "next/image";
 import Link from "next/link";
 
+
 const ResetPassword = () => {
   const [email, setEmail] = useState("");
   const [success, setSuccess] = useState(false);
