@@ -4,10 +4,9 @@ import React from "react";
 import Image from "next/image";
 import Logo from "../../../public/Assets/netflix-3.svg";
 import { motion } from "framer-motion";
-import Navbar from "./Navbar";
 export default function HeroSection() {
   const containerVariants = {
-    // تعريف تحريك للحاوية الرئيسية
+
     initial: { opacity: 0 },
     animate: {
       opacity: 1,
@@ -16,7 +15,6 @@ export default function HeroSection() {
   };
 
   const itemVariants = {
-    // تعريف تحريك للعناصر الداخلية
     initial: { y: -50, opacity: 0 },
     animate: {
       y: 0,
@@ -27,7 +25,6 @@ export default function HeroSection() {
 
   return (
     <>
-      <Navbar />
       <motion.div
         className="min-h-dvh flex justify-center items-center flex-col bg-black"
         variants={containerVariants}
@@ -57,6 +54,11 @@ export default function HeroSection() {
             Watch anywhere. Cancel anytime.
           </p>
         </motion.div>
+        <div>
+          <button className="bg-red-600 hover:bg-red-700 text-white font-bold py-3 my-4 px-20 rounded focus:outline-none focus:shadow-outline transition duration-300">
+            Sign In
+          </button>
+        </div>
       </motion.div>
     </>
   );
