@@ -11,7 +11,11 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 
-import { Pagination } from "swiper/modules";
+import { Pagination, Autoplay } from "swiper/modules"; // استيراد Autoplay
+
+// تفعيل الوحدات النمطية
+import SwiperCore from "swiper";
+SwiperCore.use([Autoplay, Pagination]);
 
 export default function HeroSection() {
   // بيانات السلايدر (يمكن استبدالها ببيانات حقيقية من قاعدة البيانات أو API)
@@ -157,15 +161,19 @@ export default function HeroSection() {
     >
       <Swiper
         pagination={{ clickable: true }}
-        modules={[Pagination]}
+        modules={[Pagination, Autoplay]} // إضافة Autoplay هنا
         className="mySwiper"
+        autoplay={{
+          delay: 5000, // تغيير الشريحة كل 5 ثواني
+          disableOnInteraction: false, // استمرار التشغيل التلقائي حتى بعد تفاعل المستخدم
+        }}
       >
         {slides.map((slide) => (
           <SwiperSlide key={slide.id}>
             <div
               className="relative h-dvh flex items-center justify-center"
               style={{
-                backgroundColor: slide.noImage ? "black" : undefined
+                backgroundColor: slide.noImage ? "#141414" : undefined, // لون الخلفية للشريحة الأخيرة
               }}
             >
               {/* عرض مشروط للصورة والتراكب */}
