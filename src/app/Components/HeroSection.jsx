@@ -173,7 +173,7 @@ export default function HeroSection() {
             <div
               className="relative h-dvh flex items-center justify-center"
               style={{
-                backgroundColor: slide.noImage ? "#141414" : undefined, // لون الخلفية للشريحة الأخيرة
+                backgroundColor: slide.noImage ? "black" : undefined, // لون الخلفية للشريحة الأخيرة
               }}
             >
               {/* عرض مشروط للصورة والتراكب */}
