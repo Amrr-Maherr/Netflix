@@ -53,9 +53,12 @@ const NeedHelp = () => {
               <h3 className="font-semibold">Common Issues</h3>
               <ul className="list-none pl-0">
                 <li className="mb-2">
-                  <a href="#" className="text-blue-500 hover:underline">
+                  <Link
+                    href="/ResetPassword"
+                    className="text-blue-500 hover:underline"
+                  >
                     Forgot email or password
-                  </a>
+                  </Link>
                 </li>
                 <li className="mb-2">
                   <a href="#" className="text-blue-500 hover:underline">
@@ -115,13 +118,16 @@ const NeedHelp = () => {
 
           {/* Back to Login */}
           <motion.div variants={itemVariants} className="mt-8 text-center">
-            <Link className="font-bold text-blue-500 hover:text-blue-800" href="/Login">
+            <Link
+              className="font-bold text-blue-500 hover:text-blue-800"
+              href="/Login"
+            >
               Back to Login
             </Link>
           </motion.div>
         </div>
       </motion.div>
-      <Footer/>
+      <Footer />
     </>
   );
 };
