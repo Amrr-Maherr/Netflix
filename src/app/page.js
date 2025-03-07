@@ -45,6 +45,12 @@ export default function Home() {
       text: "Eddie and Venom face their ultimate challenge! The symbiote saga comes to a thrilling and explosive conclusion.",
       button: "See the Trailer",
     },
+    {
+      url: "/Assets/EG-en-20250303-TRIFECTA-perspective_3241eaee-fd55-4a8b-bd9e-cd6c0058b093_small.jpg",
+      title: "Your Next Obsession Awaits",
+      text: "Discover a world of movies, shows, and unforgettable stories. What will you binge next?",
+      button: "Explore Now",
+    },
   ]);
 
   return (
