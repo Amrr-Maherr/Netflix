@@ -55,9 +55,14 @@ export default function HeroSection() {
           </p>
         </motion.div>
         <div>
-          <button className="bg-red-600 hover:bg-red-700 text-white font-bold py-3 my-4 px-20 rounded focus:outline-none focus:shadow-outline transition duration-300">
+          <motion.button
+            variants={containerVariants}
+            initial="initial"
+            animate="animate"
+            className="bg-red-600 hover:bg-red-700 text-white text-2xl font-bold py-3 my-4 px-20 rounded focus:outline-none focus:shadow-outline transition duration-300"
+          >
             Sign In
-          </button>
+          </motion.button>
         </div>
       </motion.div>
     </>
