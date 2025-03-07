@@ -27,6 +27,24 @@ export default function Home() {
       text: "The legend returns! Get ready for an epic adventure as Superman faces an unprecedented threat.",
       button: "Discover the Story",
     },
+    {
+      url: "/Assets/deadpool-wolverine-3840x2160-16840.jpg",
+      title: "Deadpool & Wolverine",
+      text: "The most anticipated duo is here to shake up the Marvel Universe! Get ready for action, humor, and unexpected alliances.",
+      button: "Get Tickets",
+    },
+    {
+      url: "/Assets/the-wild-robot-3840x2160-19415.jpg",
+      title: "The Wild Robot",
+      text: "A heartwarming animated adventure about a robot learning to survive and find its place in the natural world.",
+      button: "Learn More",
+    },
+    {
+      url: "/Assets/venom-the-last-3840x2160-16995.jpg",
+      title: "Venom: The Last Dance",
+      text: "Eddie and Venom face their ultimate challenge! The symbiote saga comes to a thrilling and explosive conclusion.",
+      button: "See the Trailer",
+    },
   ]);
 
   return (
