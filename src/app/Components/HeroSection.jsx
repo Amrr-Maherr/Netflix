@@ -4,6 +4,7 @@ import React from "react";
 import Image from "next/image";
 import Logo from "../../../public/Assets/netflix-3.svg";
 import { motion } from "framer-motion";
+import Link from "next/link";
 export default function HeroSection() {
   const containerVariants = {
 
@@ -55,14 +56,16 @@ export default function HeroSection() {
           </p>
         </motion.div>
         <div>
-          <motion.button
-            variants={containerVariants}
-            initial="initial"
-            animate="animate"
-            className="bg-red-600 hover:bg-red-700 text-white text-2xl font-bold py-3 my-4 px-20 rounded focus:outline-none focus:shadow-outline transition duration-300"
-          >
-            Sign In
-          </motion.button>
+          <Link href="/Signup">
+            <motion.button
+              variants={containerVariants}
+              initial="initial"
+              animate="animate"
+              className="bg-red-600 hover:bg-red-700 text-white text-2xl font-bold py-3 my-4 px-20 rounded focus:outline-none focus:shadow-outline transition duration-300"
+            >
+              Sign In
+            </motion.button>
+          </Link>
         </div>
       </motion.div>
     </>
