@@ -28,7 +28,7 @@ export default function HeroSection() {
         "Fearing the actions of a god-like Super Hero left unchecked, Batman takes on Superman, while their battle leaves the world vulnerable.",
       image: "/Assets/Slider/batman-v-superman-3840x2160-18724.jpg",
       buttonText: "Watch Now",
-      link: "/movies/batman-v-superman",
+      link: "/AllMovies",
     },
     {
       id: 2,
@@ -38,7 +38,7 @@ export default function HeroSection() {
         "Deadpool's chaotic antics meet Wolverine's raw power in a dimension-hopping adventure.",
       image: "/Assets/Slider/deadpool-wolverine-3840x2160-17290.jpg",
       buttonText: "Learn More",
-      link: "/movies/deadpool-wolverine",
+      link: "/AllMovies",
     },
     {
       id: 3,
@@ -48,7 +48,7 @@ export default function HeroSection() {
         "Dom Toretto and his family face their deadliest opponent yet: a ghost from their past fueled by revenge.",
       image: "/Assets/Slider/fast-x-vin-diesel-3840x2160-10266.jpg",
       buttonText: "Watch Trailer",
-      link: "/movies/fast-x",
+      link: "/AllMovies",
     },
     {
       id: 4,
@@ -58,7 +58,7 @@ export default function HeroSection() {
         "Ethan Hunt and his IMF team must track down a terrifying new weapon that threatens all of humanity if it falls into the wrong hands.",
       image: "/Assets/Slider/mission-impossible-3840x2160-11684.jpg",
       buttonText: "Rent Now",
-      link: "/movies/mission-impossible",
+      link: "/AllMovies",
     },
     {
       id: 5,
@@ -68,7 +68,7 @@ export default function HeroSection() {
         "Miles Morales catapults across the Multiverse, where he encounters a team of Spider-People charged with protecting its very existence.",
       image: "/Assets/Slider/spider-man-across-3840x2160-11595.jpg",
       buttonText: "Stream Now",
-      link: "/movies/spider-verse",
+      link: "/AllMovies",
     },
     {
       id: 6,
@@ -79,7 +79,7 @@ export default function HeroSection() {
       image:
         "/Assets/Slider/superman-dc-superheroes-henry-cavill-dc-comics-black-3840x2160-8980.jpg",
       buttonText: "Discover More",
-      link: "/movies/superman",
+      link: "/AllMovies",
     },
     {
       id: 7,
@@ -89,7 +89,7 @@ export default function HeroSection() {
         "Barry Allen uses his superpowers to travel back in time in order to change events of the past but when his attempt to save his family inadvertently alters the future, Barry becomes trapped in a reality in which General Zod has returned.",
       image: "/Assets/Slider/the-flash-2023-3840x2160-11352.jpg",
       buttonText: "Buy Now",
-      link: "/movies/the-flash",
+      link: "/AllMovies",
     },
     {
       id: 8,
@@ -100,7 +100,7 @@ export default function HeroSection() {
       image:
         "/Assets/Slider/thor-love-and-thunder-chris-hemsworth-as-thor-natalie-3840x2160-8772.jpg",
       buttonText: "Watch Free",
-      link: "/movies/thor",
+      link: "/AllMovies",
     },
     {
       id: 9,
@@ -110,7 +110,7 @@ export default function HeroSection() {
         "General Thaddeus 'Thunderbolt' Ross undergoes a transformation, becoming a powerful new player in the world of superheroes.",
       image: "/Assets/Slider/thunderbolt-ross-3840x2160-19876.jpg",
       buttonText: "Explore",
-      link: "/characters/thunderbolt-ross",
+      link: "/AllMovies",
     },
     {
       id: 10,
@@ -120,7 +120,7 @@ export default function HeroSection() {
         "A group of supervillains are recruited by the government to go on dangerous missions in exchange for reduced sentences.",
       image: "/Assets/Slider/thunderbolts-5k-3840x2160-21282.jpg",
       buttonText: "See More",
-      link: "/movies/thunderbolts",
+      link: "/AllMovies",
     },
     {
       id: 11,
