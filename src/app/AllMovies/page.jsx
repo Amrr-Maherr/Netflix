@@ -4,6 +4,7 @@ import Logo from "../../../public/Assets/netflix-3.svg";
 import { useDispatch, useSelector } from "react-redux";
 import { useState } from "react";
 import { Search } from "../Redux/Action";
+import { motion } from "framer-motion"; // استيراد Framer Motion
 
 export default function AllMovies() {
   const dispatch = useDispatch();
@@ -19,13 +20,57 @@ export default function AllMovies() {
     setSearchTerm(e.target.value);
   };
 
+  // تعريف متغيرات الحركة (Animation Variants)
+  const logoVariants = {
+    hidden: { opacity: 0, y: -50 }, // غير ظاهر، أعلى قليلاً
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 1, // المدة بالثواني
+        delay: 0.5, // تأخير البداية
+        ease: "easeOut", // نوع الحركة (easing)
+      },
+    },
+  };
+
+  const movieContainerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        delayChildren: 0.3, // تأخير ظهور العناصر الداخلية
+        staggerChildren: 0.2, // تداخل ظهور العناصر الداخلية
+      },
+    },
+  };
+
+  const movieVariants = {
+    hidden: { y: 50, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        duration: 0.5,
+        ease: "easeOut",
+      },
+    },
+  };
+
   return (
     <>
       <div className="relative isolate overflow-hidden bg-gray-900 py-16 sm:py-24 lg:py-32 min-h-screen">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto flex justify-center items-center min-h-screen">
             <div className="max-w-xl lg:max-w-lg text-center">
-              <img src={Logo.src} alt="Netflix Logo" />
+              {/* استخدام motion.img مع المتغيرات */}
+              <motion.img
+                src={Logo.src}
+                alt="Netflix Logo"
+                variants={logoVariants}
+                initial="hidden"
+                animate="visible"
+              />
               <p className="mt-4 text-lg text-gray-300">
                 Looking for a movie to thrill you or a series to captivate your
                 imagination? Start your cinematic journey here.
@@ -63,33 +108,39 @@ export default function AllMovies() {
             }}
           ></div>
         </div>
-        <div className="mt-8">
-            <div className="flex flex-wrap justify-start gap-5 p-5">
-              {searchResults.map((movie) => (
-                <div
-                  key={movie.id}
-                  className="bg-gray-800 rounded-md overflow-hidden w-72 shadow-md hover:scale-105 transition-transform duration-200 ease-in-out mx-auto"
-                >
-                  <img
-                    src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
-                    alt={movie.title}
-                    className="w-full h-auto block"
-                  />
-                  <div className="p-4">
-                    <h2 className="text-white text-lg font-semibold mb-2">
-                      {movie.title}
-                    </h2>
-                    <p className="text-gray-400 text-sm mb-2">
-                      ({movie.release_date})
-                    </p>
-                    <p className="text-gray-300 text-base line-height-relaxed">
-                      {movie.overview}
-                    </p>
-                  </div>
+        <motion.div
+          className="mt-8"
+          variants={movieContainerVariants}
+          initial="hidden"
+          animate="visible"
+        >
+          <div className="flex flex-wrap justify-start gap-5 p-5">
+            {searchResults.map((movie) => (
+              <motion.div
+                key={movie.id}
+                className="bg-gray-800 rounded-md overflow-hidden w-72 shadow-md hover:scale-105 transition-transform duration-200 ease-in-out mx-auto"
+                variants={movieVariants}
+              >
+                <img
+                  src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
+                  alt={movie.title}
+                  className="w-full h-auto block"
+                />
+                <div className="p-4">
+                  <h2 className="text-white text-lg font-semibold mb-2">
+                    {movie.title}
+                  </h2>
+                  <p className="text-gray-400 text-sm mb-2">
+                    ({movie.release_date})
+                  </p>
+                  <p className="text-gray-300 text-base line-height-relaxed">
+                    {movie.overview}
+                  </p>
                 </div>
-              ))}
-            </div>
-        </div>
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
       </div>
       <Footer />
     </>
