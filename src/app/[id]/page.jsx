@@ -120,12 +120,6 @@ export default function Details() {
               <p>Release Date: {data.release_date}</p>
               <p>Runtime: {data.runtime} minutes</p>
             </div>
-            {data.budget && data.revenue && (
-              <div className="mb-4">
-                <p>Budget: ${data.budget}</p>
-                <p>Revenue: ${data.revenue}</p>
-              </div>
-            )}
             <div className="flex space-x-4">
               {" "}
               {/* Removed justify-center */}
