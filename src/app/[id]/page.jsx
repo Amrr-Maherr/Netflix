@@ -28,6 +28,8 @@ export default function Details() {
           }
         );
         setData(response.data);
+        console.log(response.data);
+        
       } catch (err) {
         console.error("Error fetching movie details:", err);
         setError(err);
@@ -89,6 +91,7 @@ export default function Details() {
                 No Image Available
               </div>
             )}
+            <p className="mt-5 text-gray-400">{data.tagline}</p>
           </div>
           <div className="movie-data text-left">
             {" "}
@@ -136,7 +139,7 @@ export default function Details() {
           </div>
         </div>
       </div>
-      <Footer/>
+      <Footer />
     </>
   );
 }
