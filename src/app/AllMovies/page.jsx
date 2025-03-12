@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useState } from "react";
 import { Search } from "../Redux/Action";
 import { motion } from "framer-motion"; // استيراد Framer Motion
+import Link from "next/link";
 
 export default function AllMovies() {
   const dispatch = useDispatch();
@@ -116,28 +117,29 @@ export default function AllMovies() {
         >
           <div className="flex flex-wrap justify-start gap-5 p-5">
             {searchResults.map((movie) => (
-              <motion.div
-                key={movie.id}
-                className="bg-gray-800 rounded-md overflow-hidden w-72 shadow-md hover:scale-105 transition-transform duration-200 ease-in-out mx-auto"
-                variants={movieVariants}
-              >
-                <img
-                  src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
-                  alt={movie.title}
-                  className="w-full h-auto block"
-                />
-                <div className="p-4">
-                  <h2 className="text-white text-lg font-semibold mb-2">
-                    {movie.title}
-                  </h2>
-                  <p className="text-gray-400 text-sm mb-2">
-                    ({movie.release_date})
-                  </p>
-                  <p className="text-gray-300 text-base line-height-relaxed">
-                    {movie.overview}
-                  </p>
-                </div>
-              </motion.div>
+              <Link key={movie.id} href={`/${movie.id}`} passHref>
+                <motion.div
+                  className="bg-gray-800 rounded-md overflow-hidden w-72 shadow-md hover:scale-105 transition-transform duration-200 ease-in-out mx-auto"
+                  variants={movieVariants}
+                >
+                  <img
+                    src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
+                    alt={movie.title}
+                    className="w-full h-auto block"
+                  />
+                  <div className="p-4">
+                    <h2 className="text-white text-lg font-semibold mb-2">
+                      {movie.title}
+                    </h2>
+                    <p className="text-gray-400 text-sm mb-2">
+                      ({movie.release_date})
+                    </p>
+                    <p className="text-gray-300 text-base line-height-relaxed">
+                      {movie.overview}
+                    </p>
+                  </div>
+                </motion.div>
+              </Link>
             ))}
           </div>
         </motion.div>
