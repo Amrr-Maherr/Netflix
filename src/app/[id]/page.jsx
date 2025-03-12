@@ -2,6 +2,7 @@
 import axios from "axios";
 import { useParams } from "next/navigation";
 import { useEffect, useState } from "react";
+import Footer from "../Components/Footer";
 
 export default function Details() {
   const { id } = useParams();
@@ -135,6 +136,7 @@ export default function Details() {
           </div>
         </div>
       </div>
+      <Footer/>
     </>
   );
 }
