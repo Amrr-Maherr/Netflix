@@ -10,7 +10,7 @@ export default function Details() {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const imageBaseUrl = "https://image.tmdb.org/t/p/w500";
+  const imageBaseUrl = "https://image.tmdb.org/t/p/original";
 
   useEffect(() => {
     const fetchData = async () => {
@@ -59,7 +59,7 @@ export default function Details() {
   return (
     <>
       <div
-        className="relative isolate bg-zinc-900 px-6 py-24 sm:py-32 lg:px-8 text-white font-sans"
+        className="relative isolate px-6 py-24 sm:py-32 lg:px-8 text-white font-sans"
         style={{ letterSpacing: "0.02em" }}
       >
         <div
@@ -75,97 +75,62 @@ export default function Details() {
           ></div>
         </div>
 
-        <div className="mx-auto max-w-6xl">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {/* Hero Image Area */}
-            <div className="relative">
-              {data.backdrop_path ? ( // Check for backdrop_path existence
-                <div
-                  className="aspect-w-16 aspect-h-9 rounded-md shadow-md overflow-hidden"
-                  style={{
-                    backgroundImage: `url(${imageBaseUrl}${data.backdrop_path})`,
-                    backgroundSize: "cover", // Or "contain" if you prefer
-                    backgroundPosition: "center",
-                    width: "100%", // Ensure it fills the container
-                    height: "100%", // Ensure it fills the container
-                  }}
-                >
-                  <div className="absolute inset-0 bg-black opacity-40"></div>
-                </div>
-              ) : (
-                <div className="aspect-w-16 aspect-h-9 bg-gray-800 rounded-md shadow-md">
-                  {/* Fallback content if no backdrop_path */}
-                  <div className="text-white text-center py-4">
-                    No Image Available
-                  </div>
-                </div>
-              )}
-
-              {/* Overlay Content (Title, Tagline) */}
-              <div className="absolute bottom-0 left-0 p-6">
-                <h2 className="text-3xl font-bold drop-shadow-lg">
-                  {data.title}
-                </h2>
-                <p className="text-lg text-gray-300 mt-2 drop-shadow-lg">
-                  {data.tagline}
-                </p>
+        <div className="grid md:grid-cols-[1fr_1fr] grid-cols-[1fr] gap-10">
+          <div className="movie-img">
+            {data.backdrop_path ? (
+              <img
+                src={`${imageBaseUrl}${data.backdrop_path}`}
+                alt={data.title}
+                className="rounded-md shadow-md w-full h-auto"
+              />
+            ) : (
+              <div className="bg-gray-800 rounded-md shadow-md">
+                No Image Available
               </div>
+            )}
+          </div>
+          <div className="movie-data text-left">
+            {" "}
+            {/* Changed text-center to text-left */}
+            <h2 className="text-4xl font-bold mb-4">{data.title}</h2>
+            <div className="flex items-center mb-2">
+              <span className="mr-2">{data.vote_average}</span>
+              <span>({data.vote_count} votes)</span>
             </div>
-
-            {/* Movie Details Section */}
-            <div className="p-4">
-              <div className="flex items-center mb-3">
-                <span className="mr-2 text-lg font-semibold">
-                  {data.vote_average}
-                </span>
-                <span>({data.vote_count} votes)</span>
-              </div>
-              <p
-                className="text-zinc-400 mb-4 leading-relaxed"
-                style={{ lineHeight: "1.6" }}
-              >
-                {data.overview}
-              </p>
-
+            <p className="text-lg mb-4">{data.overview}</p>
+            <div className="mb-4">
+              <h3 className="text-lg font-semibold">Genres:</h3>
+              <ul className="flex flex-wrap gap-2">
+                {data.genres &&
+                  data.genres.map((genre) => (
+                    <li
+                      key={genre.id}
+                      className="bg-gray-800 rounded-full px-3 py-1 text-sm"
+                    >
+                      {genre.name}
+                    </li>
+                  ))}
+              </ul>
+            </div>
+            <div className="mb-4">
+              <p>Release Date: {data.release_date}</p>
+              <p>Runtime: {data.runtime} minutes</p>
+            </div>
+            {data.budget && data.revenue && (
               <div className="mb-4">
-                <h3 className="text-md font-semibold text-gray-300 mb-2">
-                  Genres:
-                </h3>
-                <ul className="flex flex-wrap gap-2">
-                  {data.genres &&
-                    data.genres.map((genre) => (
-                      <li
-                        key={genre.id}
-                        className="bg-zinc-700 rounded-full px-3 py-1 text-sm text-gray-200"
-                      >
-                        {genre.name}
-                      </li>
-                    ))}
-                </ul>
+                <p>Budget: ${data.budget}</p>
+                <p>Revenue: ${data.revenue}</p>
               </div>
-
-              <div className="mb-4">
-                <p className="text-zinc-400">
-                  Release Date: {data.release_date}
-                </p>
-                <p className="text-zinc-400">Runtime: {data.runtime} minutes</p>
-              </div>
-
-              {data.budget && data.revenue && (
-                <div className="mb-4">
-                  <p className="text-zinc-400">Budget: ${data.budget}</p>
-                  <p className="text-zinc-400">Revenue: ${data.revenue}</p>
-                </div>
-              )}
-
-              <div className="flex space-x-4 mt-6">
-                <button className="bg-red-600 hover:bg-red-700 text-white font-semibold py-2 px-4 rounded shadow-md">
-                  Play
-                </button>
-                <button className="bg-zinc-800 hover:bg-zinc-700 text-white font-semibold py-2 px-4 rounded shadow-md">
-                  Add to List
-                </button>
-              </div>
+            )}
+            <div className="flex space-x-4">
+              {" "}
+              {/* Removed justify-center */}
+              <button className="bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">
+                Play
+              </button>
+              <button className="bg-gray-700 hover:bg-gray-800 text-white font-bold py-2 px-4 rounded">
+                Add to List
+              </button>
             </div>
           </div>
         </div>
