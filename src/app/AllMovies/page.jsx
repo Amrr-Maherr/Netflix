@@ -135,7 +135,7 @@ export default function AllMovies() {
                       ({movie.release_date})
                     </p>
                     <p className="text-gray-300 text-base line-height-relaxed">
-                      {movie.overview}
+                      {movie.overview.slice(0,150)}...
                     </p>
                   </div>
                 </motion.div>
