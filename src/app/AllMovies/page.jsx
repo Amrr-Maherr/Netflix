@@ -117,7 +117,7 @@ export default function AllMovies() {
         >
           <div className="flex flex-wrap justify-start gap-5 p-5">
             {searchResults.map((movie) => (
-              <Link key={movie.id} href={`/${movie.id}`} passHref>
+              <Link key={movie.id} href={`/${movie.id}`} passHref className="mx-auto">
                 <motion.div
                   className="bg-gray-800 rounded-md overflow-hidden w-72 shadow-md hover:scale-105 transition-transform duration-200 ease-in-out mx-auto"
                   variants={movieVariants}
