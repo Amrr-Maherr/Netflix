@@ -1,5 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 export default function MovieSection({ poster }) {
   const containerVariants = {
@@ -29,9 +30,11 @@ export default function MovieSection({ poster }) {
         <h1 className="text-4xl font-extrabold mb-2">{poster.title}</h1>
         <p className="text-base mb-4 text-gray-400">{poster.text}</p>
         {poster.button && (
-          <button className="bg-red-600 hover:bg-red-800 transition-colors text-white font-semibold py-2 px-5 rounded-lg">
-            {poster.button}
-          </button>
+          <Link href={`/Movies`}>
+            <button className="bg-red-600 hover:bg-red-800 transition-colors text-white font-semibold py-2 px-5 rounded-lg">
+              {poster.button}
+            </button>
+          </Link>
         )}
       </motion.div>
     </section>
