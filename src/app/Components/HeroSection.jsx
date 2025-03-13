@@ -11,7 +11,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 
-import { Pagination, Autoplay } from "swiper/modules"; // استيراد Autoplay
+import { Pagination, Autoplay } from "swiper/modules"; 
 
 // تفعيل الوحدات النمطية
 import SwiperCore from "swiper";
@@ -154,7 +154,7 @@ export default function HeroSection() {
   return (
     <motion.div
       className="min-h-dvh relative overflow-hidden"
-      style={{ width: "100%", height: "100vh" }} // إضافة الأبعاد هنا
+      style={{ width: "100%", height: "100vh" }}
       variants={containerVariants}
       initial="initial"
       animate="animate"
