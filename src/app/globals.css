@@ -1,1 +1,22 @@
 @import "tailwindcss";
+
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #000;
+}
+
+
+::-webkit-scrollbar-thumb {
+    background: #E7000B;
+    /* أحمر */
+    border-radius: 5px;
+}
+
+/* تغيير لون شريط التمرير عند تمرير الماوس فوقه */
+::-webkit-scrollbar-thumb:hover {
+    background: #b50009
+}
