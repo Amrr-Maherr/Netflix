@@ -117,7 +117,12 @@ export default function AllMovies() {
         >
           <div className="flex flex-wrap justify-start gap-5 p-5">
             {searchResults.map((movie) => (
-              <Link key={movie.id} href={`/${movie.id}`} passHref className="mx-auto">
+              <Link
+                key={movie.id}
+                href={`/${movie.id}`}
+                passHref
+                className="mx-auto"
+              >
                 <motion.div
                   className="bg-gray-800 rounded-md overflow-hidden w-72 shadow-md hover:scale-105 transition-transform duration-200 ease-in-out mx-auto"
                   variants={movieVariants}
@@ -128,15 +133,33 @@ export default function AllMovies() {
                     className="w-full h-auto block"
                   />
                   <div className="p-4">
-                    <h2 className="text-white text-lg font-semibold mb-2">
-                      {movie.title}
-                    </h2>
-                    <p className="text-gray-400 text-sm mb-2">
-                      ({movie.release_date})
-                    </p>
-                    <p className="text-gray-300 text-base line-height-relaxed">
-                      {movie.overview.slice(0,150)}...
-                    </p>
+                    {movie.title ? (
+                      <>
+                        <h2 className="text-white text-lg font-semibold mb-2">
+                          {movie.title}
+                        </h2>
+                      </>
+                    ) : (
+                      <>Not Found</>
+                    )}
+                    {movie.release_date ? (
+                      <>
+                        <p className="text-gray-400 text-sm mb-2">
+                          ({movie.release_date})
+                        </p>
+                      </>
+                    ) : (
+                      <>Not Found</>
+                    )}
+                    {movie.overview ? (
+                      <>
+                        <p className="text-gray-300 text-base line-height-relaxed">
+                          {movie.overview.slice(0, 150)}...
+                        </p>
+                      </>
+                    ) : (
+                      <>Not Found</>
+                    )}
                   </div>
                 </motion.div>
               </Link>
