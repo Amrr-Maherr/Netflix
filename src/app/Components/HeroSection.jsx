@@ -24,8 +24,6 @@ export default function HeroSection() {
       id: 1,
       title: "Batman v Superman: Dawn of Justice",
       teaser: "The world's finest heroes clash...",
-      description:
-        "Fearing the actions of a god-like Super Hero left unchecked, Batman takes on Superman, while their battle leaves the world vulnerable.",
       image: "/Assets/Slider/batman-v-superman-3840x2160-18724.jpg",
       buttonText: "Watch Now",
       link: "/AllMovies",
@@ -34,8 +32,6 @@ export default function HeroSection() {
       id: 2,
       title: "Deadpool & Wolverine",
       teaser: "Two unlikely heroes team up...",
-      description:
-        "Deadpool's chaotic antics meet Wolverine's raw power in a dimension-hopping adventure.",
       image: "/Assets/Slider/deadpool-wolverine-3840x2160-17290.jpg",
       buttonText: "Learn More",
       link: "/AllMovies",
@@ -44,8 +40,6 @@ export default function HeroSection() {
       id: 3,
       title: "Fast X",
       teaser: "The end of the road begins...",
-      description:
-        "Dom Toretto and his family face their deadliest opponent yet: a ghost from their past fueled by revenge.",
       image: "/Assets/Slider/fast-x-vin-diesel-3840x2160-10266.jpg",
       buttonText: "Watch Trailer",
       link: "/AllMovies",
@@ -54,8 +48,6 @@ export default function HeroSection() {
       id: 4,
       title: "Mission: Impossible - Dead Reckoning Part One",
       teaser: "Fate has other plans...",
-      description:
-        "Ethan Hunt and his IMF team must track down a terrifying new weapon that threatens all of humanity if it falls into the wrong hands.",
       image: "/Assets/Slider/mission-impossible-3840x2160-11684.jpg",
       buttonText: "Rent Now",
       link: "/AllMovies",
@@ -64,8 +56,6 @@ export default function HeroSection() {
       id: 5,
       title: "Spider-Man: Across the Spider-Verse",
       teaser: "Miles Morales returns...",
-      description:
-        "Miles Morales catapults across the Multiverse, where he encounters a team of Spider-People charged with protecting its very existence.",
       image: "/Assets/Slider/spider-man-across-3840x2160-11595.jpg",
       buttonText: "Stream Now",
       link: "/AllMovies",
@@ -74,8 +64,6 @@ export default function HeroSection() {
       id: 6,
       title: "Superman",
       teaser: "The Man of Steel soars...",
-      description:
-        "Superman inspires hope and fights for justice, facing threats that test his strength and resolve.",
       image:
         "/Assets/Slider/superman-dc-superheroes-henry-cavill-dc-comics-black-3840x2160-8980.jpg",
       buttonText: "Discover More",
@@ -85,8 +73,6 @@ export default function HeroSection() {
       id: 7,
       title: "The Flash",
       teaser: "Worlds collide...",
-      description:
-        "Barry Allen uses his superpowers to travel back in time in order to change events of the past but when his attempt to save his family inadvertently alters the future, Barry becomes trapped in a reality in which General Zod has returned.",
       image: "/Assets/Slider/the-flash-2023-3840x2160-11352.jpg",
       buttonText: "Buy Now",
       link: "/AllMovies",
@@ -95,8 +81,6 @@ export default function HeroSection() {
       id: 8,
       title: "Thor: Love and Thunder",
       teaser: "The God of Thunder embarks...",
-      description:
-        "Thor enlists the help of Valkyrie, Korg, and ex-girlfriend Jane Foster to fight Gorr the God Butcher, who intends to eliminate all gods.",
       image:
         "/Assets/Slider/thor-love-and-thunder-chris-hemsworth-as-thor-natalie-3840x2160-8772.jpg",
       buttonText: "Watch Free",
@@ -106,8 +90,6 @@ export default function HeroSection() {
       id: 9,
       title: "Thunderbolt Ross",
       teaser: "A new force emerges...",
-      description:
-        "General Thaddeus 'Thunderbolt' Ross undergoes a transformation, becoming a powerful new player in the world of superheroes.",
       image: "/Assets/Slider/thunderbolt-ross-3840x2160-19876.jpg",
       buttonText: "Explore",
       link: "/AllMovies",
@@ -116,8 +98,6 @@ export default function HeroSection() {
       id: 10,
       title: "Thunderbolts",
       teaser: "Justice has a new team...",
-      description:
-        "A group of supervillains are recruited by the government to go on dangerous missions in exchange for reduced sentences.",
       image: "/Assets/Slider/thunderbolts-5k-3840x2160-21282.jpg",
       buttonText: "See More",
       link: "/AllMovies",
@@ -126,8 +106,7 @@ export default function HeroSection() {
       id: 11,
       title: "Explore More",
       teaser: "Discover new worlds...",
-      description:
-        "Dive into our vast collection of movies and TV shows. There's something for everyone!",
+
       buttonText: "Browse All",
       link: "/Login",
       noImage: true, // علامة للإشارة إلى عدم وجود صورة خلفية
@@ -217,12 +196,6 @@ export default function HeroSection() {
                   variants={itemVariants}
                 >
                   {slide.teaser}
-                </motion.p>
-                <motion.p
-                  className="text-md md:text-lg text-gray-400 mb-8"
-                  variants={itemVariants}
-                >
-                  {slide.description}
                 </motion.p>
                 <Link href={slide.link}>
                   <motion.button
