@@ -1,4 +1,6 @@
 "use client";
+import Logo from "../../../public/Assets/netflix-3.svg";
+import Image from "next/image";
 import { useEffect, useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { GetData } from "../Redux/Action";
@@ -10,8 +12,6 @@ import { motion } from "framer-motion";
 import "swiper/css";
 import "swiper/css/pagination";
 import Link from "next/link";
-import Image from "next/image"; // Import Image component
-import Logo from "../../../public/Assets/netflix-3.svg";
 
 const containerVariants = {
   initial: { opacity: 0 },
@@ -24,6 +24,16 @@ const itemVariants = {
 };
 
 const IMAGE_BASE_URL = "https://image.tmdb.org/t/p/original/";
+
+const swiperSlideVariants = {
+  initial: { opacity: 0, x: -50 },
+  animate: {
+    opacity: 1,
+    x: 0,
+    transition: { duration: 0.7, ease: "easeInOut" },
+  },
+  exit: { opacity: 0, x: 50, transition: { duration: 0.7, ease: "easeInOut" } },
+};
 
 export default function Movies() {
   const dispatch = useDispatch();
@@ -67,11 +77,15 @@ export default function Movies() {
             >
               {AllData.map((movie) => (
                 <SwiperSlide key={movie.id}>
-                  <div
+                  <motion.div
                     className="relative h-dvh flex items-center justify-center text-center flex-col"
                     style={{
                       backgroundColor: movie.noImage ? "black" : undefined,
                     }}
+                    variants={swiperSlideVariants}
+                    initial="initial"
+                    animate="animate"
+                    exit="exit"
                   >
                     {!movie.noImage && (
                       <>
@@ -84,24 +98,24 @@ export default function Movies() {
                         <div className="absolute inset-0 opacity-50 bg-black"></div>
                       </>
                     )}
-                     <div
-                                      className="w-1/2 md:w-1/3 lg:w-1/4 mb-4 mx-auto"
-                                      variants={itemVariants}
-                                    >
-                                      <Image
-                                        src={Logo}
-                                        alt="Netflix Logo"
-                                        width={500}
-                                        height={300}
-                                        layout="responsive"
-                                        objectFit="contain"
-                                        className="mx-auto"
-                                      />
-                                    </div>
                     <motion.h2
-                      className="relative z-10 text-2xl md:text-3xl font-bold leading-tight text-white mb-2"
+                      className="relative z-10 text-2xl md:text-3xl font-bold leading-tight text-white mb-2 flex items-center justify-center flex-col"
                       variants={itemVariants}
                     >
+                      <motion.div
+                        className="w-1/2 md:w-1/3 lg:w-1/4 mb-4 mx-auto"
+                        variants={itemVariants}
+                      >
+                        <Image
+                          src={Logo}
+                          alt="Netflix Logo"
+                          width={500}
+                          height={300}
+                          layout="responsive"
+                          objectFit="contain"
+                          className="mx-auto"
+                        />
+                      </motion.div>
                       {movie.title}
                     </motion.h2>
                     <motion.p
@@ -115,7 +129,7 @@ export default function Movies() {
                         Watch Now
                       </button>
                     </Link>
-                  </div>
+                  </motion.div>
                 </SwiperSlide>
               ))}
             </Swiper>
