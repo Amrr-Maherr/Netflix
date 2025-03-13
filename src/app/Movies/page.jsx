@@ -84,7 +84,7 @@ export default function Movies() {
                         <div className="absolute inset-0 opacity-50 bg-black"></div>
                       </>
                     )}
-                     <motion.div
+                     <div
                                       className="w-1/2 md:w-1/3 lg:w-1/4 mb-4 mx-auto"
                                       variants={itemVariants}
                                     >
@@ -97,7 +97,7 @@ export default function Movies() {
                                         objectFit="contain"
                                         className="mx-auto"
                                       />
-                                    </motion.div>
+                                    </div>
                     <motion.h2
                       className="relative z-10 text-2xl md:text-3xl font-bold leading-tight text-white mb-2"
                       variants={itemVariants}
