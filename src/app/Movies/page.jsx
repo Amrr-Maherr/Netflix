@@ -13,7 +13,7 @@ export default function Movies() {
 
     return (
       <>
-        <div className="flex flex-wrap justify-center p-4 bg-gray-900">
+        <div className="flex flex-wrap justify-center p-4 bg-black">
           {AllData.map((movie) => (
             <MovieCard key={movie.id} movie={movie} />
           ))}
