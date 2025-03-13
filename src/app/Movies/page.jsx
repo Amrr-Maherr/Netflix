@@ -3,6 +3,7 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux"
 import { GetData } from "../Redux/Action";
 import MovieCard from "../Components/MovieCard";
+import Footer from "../Components/Footer";
 
 export default function Movies() {
   const dispatch = useDispatch();
@@ -18,6 +19,7 @@ export default function Movies() {
             <MovieCard key={movie.id} movie={movie} />
           ))}
         </div>
+        <Footer/>
       </>
     );
 }
