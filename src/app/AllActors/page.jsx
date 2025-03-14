@@ -4,6 +4,7 @@ import axios from "axios";
 import ActorCard from "../Components/ActoreCard";
 import MovieCard from "../Components/MovieCard";
 import Link from "next/link";
+import Footer from "../Components/Footer";
 
 export default function AllActors() {
   const [actors, setActors] = useState([]);
@@ -56,7 +57,7 @@ const topRated = async () => {
         </div>
       </div>
       <section>
-        <div className="h-dvh">
+        <div>
           <div className="w-full text-white text-center my-6">
             <h2 className="text-4xl font-bold tracking-tight">
               Highest Rated: <span className="text-red-500">Must-See</span>{" "}
@@ -95,6 +96,7 @@ const topRated = async () => {
           </div>
         </div>
       </section>
+      <Footer/>
     </>
   );
 }
