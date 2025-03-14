@@ -6,6 +6,7 @@ import Footer from "./Components/Footer";
 import HeroSection from "./Components/HeroSection";
 import MovieSection from "./Components/MovieSection";
 import PricingSection from "./Components/PricingSection";
+import UpComing from "./Components/UpComing";
 
 export default function Home() {
   const [moviesPoster, setmoviesPoster] = useState([
@@ -61,6 +62,7 @@ export default function Home() {
         <MovieSection key={index} poster={poster} />
       ))}
       <PricingSection />
+      <UpComing/>
       <Footer />
     </>
   );
