@@ -8,6 +8,7 @@ import {
   faTwitter,
   faYoutube,
 } from "@fortawesome/free-brands-svg-icons"; // Social Icons
+import Link from "next/link"; // Import Link
 
 const Footer = () => {
   const containerVariants = {
@@ -104,7 +105,7 @@ const Footer = () => {
             </li>
             <li>
               <a href="#" className="hover:underline text-sm">
-                Jobs
+                Careers
               </a>
             </li>
             <li>
@@ -120,9 +121,9 @@ const Footer = () => {
           </motion.ul>
           <motion.ul variants={itemVariants} className="list-none">
             <li>
-              <a href="#" className="hover:underline text-sm">
-                Account
-              </a>
+              <Link href="/AllActors" className="hover:underline text-sm">
+                Browse Actors
+              </Link>
             </li>
             <li>
               <a href="#" className="hover:underline text-sm">
@@ -136,15 +137,15 @@ const Footer = () => {
             </li>
             <li>
               <a href="#" className="hover:underline text-sm">
-                Only on Netflix
+                Exclusively on [Your Platform Name]
               </a>
             </li>
           </motion.ul>
           <motion.ul variants={itemVariants} className="list-none">
             <li>
-              <a href="#" className="hover:underline text-sm">
-                Media Center
-              </a>
+              <Link href="/AllMovies" className="hover:underline text-sm">
+                Explore Movies
+              </Link>
             </li>
             <li>
               <a href="#" className="hover:underline text-sm">
