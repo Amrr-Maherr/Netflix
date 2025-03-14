@@ -137,7 +137,14 @@ export default function Movies() {
           )}
         </motion.div>
       </section>
-        <MovieSectionTwo/>
+      <MovieSectionTwo />
+      <div className="py-5 flex justify-center my-5">
+        <Link href={"/AllMovies"}>
+          <button className="cursor-pointer bg-red-600 hover:bg-red-700 text-white text-2xl font-bold py-3 px-20 rounded focus:outline-none focus:shadow-outline transition duration-300">
+            Search & Stream
+          </button>
+        </Link>
+      </div>
       <div className="flex flex-wrap justify-center p-4 bg-black">
         {AllData.map((movie) => (
           <MovieCard key={movie.id} movie={movie} />
