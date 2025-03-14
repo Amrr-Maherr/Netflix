@@ -43,7 +43,7 @@ const topRated = async () => {
   
   return (
     <>
-      <div className="bg-black min-h-screen py-8">
+      <div className="bg-black py-8">
         <div className="container mx-auto">
           <h1 className="text-white text-2xl font-bold mb-6 px-4">
             Popular Actors
