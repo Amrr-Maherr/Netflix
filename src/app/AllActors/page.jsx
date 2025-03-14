@@ -1,40 +1,31 @@
-// components/AllActors.js
 "use client";
 import React, { useState, useEffect } from "react";
-import ActorCard from "../Components/ActoreCard.jsx";
+import axios from "axios";
+import ActorCard from "../Components/ActoreCard";
 
 export default function AllActors() {
   const [actors, setActors] = useState([]);
+  const accessToken =
+    "eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJhYTlkMDU1YTFlNWJjZTBkMmM0ZDYyN2MyNDQyMmQ1MSIsIm5iZiI6MTc0MTAzMjIyMS4yNTQwMDAyLCJzdWIiOiI2N2M2MGIxZGEzMjc3YWI0YTFlNzhmOWQiLCJzY29wZXMiOlsiYXBpX3JlYWQiXSwidmVyc2lvbiI6MX0.AamZp8WZ_wNUjjkWD-jI2Nj2ZKMO58TcWD-N6fDTEKU";
+
+  const fetchActors = async () => {
+    try {
+      const response = await axios.get(
+        "https://api.themoviedb.org/3/person/popular",
+        {
+          headers: { Authorization: `Bearer ${accessToken}` },
+        }
+      );
+      setActors(response.data.results);
+    } catch (error) {
+      console.error("Error fetching actors:", error);
+    }
+  };
 
   useEffect(() => {
-    const fetchActors = async () => {
-      try {
-        const response = await fetch(
-          process.env.NEXT_PUBLIC_POPULAR_PERSON_ENDPOINT,
-          {
-            headers: {
-              Authorization: `Bearer ${process.env.NEXT_PUBLIC_TMDB_BEARER_TOKEN}`,
-              "Content-Type": "application/json",
-            },
-          }
-        );
-
-        if (!response.ok) {
-          throw new Error(`HTTP error! status: ${response.status}`);
-        }
-
-        const data = await response.json();
-        console.log("Data from API:", data);
-        setActors(data.results);
-      } catch (e) {
-        setError(e);
-        setLoading(false);
-      }
-    };
-
     fetchActors();
   }, []);
-    
+
   return (
     <div className="bg-black min-h-screen py-8">
       <div className="container mx-auto">
