@@ -57,8 +57,14 @@ const topRated = async () => {
       </div>
       <section>
         <div className="h-dvh">
-          <div className="w-full text-white text-center my-5">
-            <h1 className="text-6xl">Top Rated</h1>
+          <div className="w-full text-white text-center my-6">
+            <h2 className="text-4xl font-bold tracking-tight">
+              Highest Rated: <span className="text-red-500">Must-See</span>{" "}
+              Movies
+            </h2>
+            <p className="text-gray-400 mt-2">
+              The best of the best, waiting for you.
+            </p>
           </div>
           <div className="flex flex-wrap w-full">
             {movie.map((mo) => (
