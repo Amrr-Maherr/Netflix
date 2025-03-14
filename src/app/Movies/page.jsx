@@ -12,6 +12,7 @@ import { motion } from "framer-motion";
 import "swiper/css";
 import "swiper/css/pagination";
 import Link from "next/link";
+import MovieSectionTwo from "../Components/MovieSectionTwo";
 
 const containerVariants = {
   initial: { opacity: 0 },
@@ -136,6 +137,7 @@ export default function Movies() {
           )}
         </motion.div>
       </section>
+        <MovieSectionTwo/>
       <div className="flex flex-wrap justify-center p-4 bg-black">
         {AllData.map((movie) => (
           <MovieCard key={movie.id} movie={movie} />
