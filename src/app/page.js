@@ -40,7 +40,7 @@ export default function Home() {
       button: "Learn More",
     },
     {
-      url: "/Assets/venom-the-last-3840x2160-16995.jpg",
+      url: "/Assets/venom.jpg",
       title: "Venom: The Last Dance",
       text: "Eddie and Venom face their ultimate challenge! The symbiote saga comes to a thrilling and explosive conclusion.",
       button: "See the Trailer",
