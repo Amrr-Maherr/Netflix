@@ -4,7 +4,7 @@ import Link from "next/link";
 
 const ActorCard = ({ actor }) => {
   return (
-    <Link href={"/"}>
+    <Link href={`/pages/actor/${actor.id}`}>
       <div className="group relative w-48 mx-2 my-4 flex-shrink-0">
         {actor.profile_path ? (
           <img
