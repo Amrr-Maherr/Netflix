@@ -2,12 +2,8 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faDatabase,
-  faSearch,
-  faImages,
-  faLifeRing,
-} from "@fortawesome/free-solid-svg-icons"; // Importing Icons
+import { faFilm, faSearch, faUsers } from "@fortawesome/free-solid-svg-icons"; // Importing Icons
+import Link from "next/link";
 
 const FeaturesSection = () => {
   const containerVariants = {
@@ -32,41 +28,27 @@ const FeaturesSection = () => {
 
   const features = [
     {
-      title: "Endless Entertainment",
-      description:
-        "Dive into a vast library of movies and shows, all at your fingertips.",
-      icon: faDatabase,
-    },
-    {
-      title: "Smart Search",
-      description:
-        "Find exactly what you're looking for with our powerful search tools.",
+      title: "Search Movies",
+      description: "Find your favorite movies with our advanced search.",
       icon: faSearch,
+      link: "/AllMovies", // Add Link to Search
     },
     {
-      title: "Stunning Visuals",
-      description:
-        "Get access to high-quality images and artwork for all your content.",
-      icon: faImages,
+      title: "All Movies",
+      description: "Explore our extensive library of movies.",
+      icon: faFilm,
+      link: "/Movies", // Add Link to All Movies
     },
     {
-      title: "Always There for You",
-      description:
-        "Our dedicated support team is ready to assist you with any questions.",
-      icon: faLifeRing,
+      title: "Popular Actors",
+      description: "Discover and explore your favorite actors.",
+      icon: faUsers,
+      link: "/AllActors", // Add Link to Actors
     },
   ];
-
-  const truncateText = (text, maxLength) => {
-    if (text.length > maxLength) {
-      return text.substring(0, maxLength) + "...";
-    }
-    return text;
-  };
-
   return (
     <motion.div
-      className="bg-black py-12 px-5" // Netflix's primary background color
+      className="bg-black py-12 px-5"
       variants={containerVariants}
       initial="initial"
       animate="animate"
@@ -76,25 +58,29 @@ const FeaturesSection = () => {
           variants={itemVariants}
           className="text-3xl md:text-4xl font-bold text-white mb-8"
         >
-          Everything You Need to Stream
+          Explore Movies and Actors
         </motion.h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {features.map((feature, index) => (
             <motion.div
               key={index}
               variants={itemVariants}
-              className="p-6 bg-gray-900 rounded-lg shadow-md hover:shadow-lg transition duration-300" // Dark card background
+              className="p-6 rounded-lg shadow-xl hover:shadow-2xl transition duration-300 backdrop-blur-md bg-opacity-10 bg-gray-900 border border-gray-800"
             >
               <FontAwesomeIcon
                 icon={feature.icon}
-                className="text-red-500 text-3xl mb-4" // Netflix Red color
+                className="text-red-500 text-3xl mb-4"
               />
               <h3 className="text-xl font-semibold text-white mb-2">
-                {truncateText(feature.title, 25)}
+                {feature.title}
               </h3>
-              <p className="text-gray-400">
-                {truncateText(feature.description, 60)}
-              </p>
+              <p className="text-gray-400">{feature.description}</p>
+              <Link
+                href={feature.link}
+                className="inline-block mt-4 px-4 py-2 text-sm font-semibold text-white bg-red-600 rounded-md hover:bg-red-700 transition duration-300"
+              >
+                Explore
+              </Link>
             </motion.div>
           ))}
         </div>
