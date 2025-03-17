@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFilm, faSearch, faUsers } from "@fortawesome/free-solid-svg-icons"; // Importing Icons
 import Link from "next/link";
+import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 
 const FeaturesSection = () => {
   const containerVariants = {
@@ -45,6 +46,12 @@ const FeaturesSection = () => {
       icon: faUsers,
       link: "/AllActors", // Add Link to Actors
     },
+    {
+      title: "Search Actors",
+      description: "Find your Favorite actors with our advanced search.",
+      icon: faMagnifyingGlass,
+      link: "/Actors", // Add Link to Actors Search
+    },
   ];
   return (
     <motion.div
@@ -60,7 +67,7 @@ const FeaturesSection = () => {
         >
           Explore Movies and Actors
         </motion.h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-8">
           {features.map((feature, index) => (
             <motion.div
               key={index}
