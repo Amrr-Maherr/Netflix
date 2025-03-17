@@ -27,7 +27,7 @@ export default function UpComing() {
     return (
       <>
         <section>
-          <div className="container">
+          <div className="container mx-auto">
             <div className="my-5">
               <h1 className="text-white text-center text-3xl font-semibold tracking-tight">
                 Get Ready: Upcoming Movies You Can't Miss!
